@@ -6,15 +6,15 @@ const getImage = (path, imageFormat) => {
   let srcset = imageFormat.poster_sizes
     .map((size) => {
       const computedSize = size.slice(1) + 'w';
-      return `${imageFormat.base_url}${size}${path} ${computedSize}`}
+      return `${imageFormat.secure_base_url}${size}${path} ${computedSize}`}
     );
   srcset = srcset.slice(0,srcset.length-1).join(',');
-  return <img className="Image" srcSet={srcset} src={`${imageFormat.base_url}${imageFormat.poster_sizes[imageFormat.poster_sizes.length - 2]}${path}`}/>
+  return <img className="Image" srcSet={srcset} src={`${imageFormat.secure_base_url}${imageFormat.poster_sizes[imageFormat.poster_sizes.length - 2]}${path}`}/>
 }
 
 const Film =({film, imageFormat})=> {
   let item;
-  if(imageFormat && imageFormat.base_url && imageFormat.poster_sizes){
+  if(imageFormat && imageFormat.secure_base_url && imageFormat.poster_sizes){
     item = (
       <div className="Film">
         <div>{getImage(film.poster_path, imageFormat)}</div>
