@@ -1,0 +1,30 @@
+.Film {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.Film .Description {
+  text-align: center;
+}
+
+.Film .Image {
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .Film {
+    display: flex;
+  }
+
+  .Film .Description {
+    flex: 1;
+    padding-left: 40px;
+    text-align: left;
+  }
+
+  .Film .Image {
+    width: 300px;
+  }
+
+}
